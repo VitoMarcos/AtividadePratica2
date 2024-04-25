@@ -1,29 +1,15 @@
 public class FuncionariosGeral extends Pessoa {
 
-    String funcao;
     int tempContrato;
     float salario;
 
     public FuncionariosGeral() {}
 
-    public FuncionariosGeral(String nome, int idade, String cargo, String funcao, int tempContrato, float salario) {
+    public FuncionariosGeral(String nome, int idade, String cargo, int tempContrato, float salario) {
 
         super(nome, idade, cargo);
-        this.funcao = funcao;
         this.tempContrato = tempContrato;
         this.salario = salario;
-
-    }
-
-    public String getFuncao() {
-
-        return funcao;
-
-    }
-
-    public void setFuncao(String funcao) {
-
-        this.funcao = funcao;
 
     }
 
@@ -33,7 +19,7 @@ public class FuncionariosGeral extends Pessoa {
 
     }
 
-    public void setTempContrato(String tempContrato) {
+    public void setTempContrato(int tempContrato) {
 
         this.tempContrato = tempContrato;
 
@@ -45,7 +31,7 @@ public class FuncionariosGeral extends Pessoa {
 
     }
 
-    public void setSalario(String salario) {
+    public void setSalario(float salario) {
 
         this.salario = salario;
 
@@ -54,7 +40,7 @@ public class FuncionariosGeral extends Pessoa {
     @Override
     public String toString() {
 
-        return super.toString() + "\nFunção: " + funcao + "\nTempo de Contrato(anos): " + tempContrato +
+        return super.toString() + "\nTempo de Contrato(anos): " + tempContrato +
         "\nSalário: R$" + salario;
 
     }
