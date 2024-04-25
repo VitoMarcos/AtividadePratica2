@@ -1,7 +1,7 @@
 public class Atleta extends Pessoa{
-    String posicao;
-    int tempContrato;
-    float salario;
+    private String posicao;
+    private int tempContrato;
+    private float salario;
 
     
     public Atleta() {

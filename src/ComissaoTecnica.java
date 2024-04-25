@@ -1,7 +1,7 @@
 public class ComissaoTecnica extends Pessoa {
 
-    int tempContrato;
-    float salario;
+    private int tempContrato;
+    private float salario;
 
     public ComissaoTecnica() {}
 

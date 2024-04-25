@@ -1,7 +1,7 @@
 public class CategoriaDeBase extends Pessoa{
-    String posicao;
-    int tempContrato;
-    float salario;
+    private String posicao;
+    private int tempContrato;
+    private float salario;
     public CategoriaDeBase() {}
     public CategoriaDeBase(String nome, int idade, String cargo, String posicao, int tempContrato, float salario) {
         super(nome, idade, cargo);

@@ -1,7 +1,7 @@
 public class DepartamentoMedico  extends Pessoa{
     
-    int tempContrato;
-    float salario;
+    private int tempContrato;
+    private float salario;
     public DepartamentoMedico() {}
     public DepartamentoMedico(String nome, int idade, String cargo, int tempContrato,
             float salario) {
