@@ -1,21 +1,13 @@
 public class DepartamentoMedico  extends Pessoa{
     
-    String especialidade;
     int tempContrato;
     float salario;
     public DepartamentoMedico() {}
-    public DepartamentoMedico(String nome, int idade, String cargo, String especialidade, int tempContrato,
+    public DepartamentoMedico(String nome, int idade, String cargo, int tempContrato,
             float salario) {
         super(nome, idade, cargo);
-        this.especialidade = especialidade;
         this.tempContrato = tempContrato;
         this.salario = salario;
-    }
-    public String getEspecialidade() {
-        return especialidade;
-    }
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
     }
     public int getTempContrato() {
         return tempContrato;
@@ -33,6 +25,6 @@ public class DepartamentoMedico  extends Pessoa{
     @Override
     public String toString() {
         
-        return super.toString() + "\nEspecialidade: " + especialidade + "\nTempo de contrato(anos): " + tempContrato + "\nSalario: R$" + salario;
+        return super.toString() + "\nTempo de contrato(anos): " + tempContrato + "\nSalario: R$" + salario;
     }
 }
