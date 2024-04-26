@@ -50,7 +50,7 @@ public class Atleta extends Pessoa{
     @Override
     public String toString() {
         
-        return super.toString() + "\nPosição: " + posicao + "\nTempo de contrato(meses): " + "Salario: R$" + salario;
+        return super.toString() + "\nPosição: " + posicao + "\nTempo de contrato(meses): " + "\nSalario: R$" + salario;
     }
     
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cadastro {
-    
+
     private static List<Pessoa> listaColaboradores;
 
     public Cadastro(){
@@ -24,42 +24,57 @@ public class Cadastro {
     public  void cadastrar(ComissaoTecnica c){
         listaColaboradores.add(c);
     }
-
     public  List<Pessoa> getListaColaboradores() {
         return listaColaboradores;
     }
 
+
     public void procurar(String rc){
 
+        boolean encontrado = false;
         for (Pessoa i : listaColaboradores) {
             if (i.getRc().equals(rc)) {
                 System.out.println("Funcionário encontrado!\n" + i.toString());
+                encontrado = true;
                 return;
             }
+
+        }
+
+        if (!encontrado) {
             System.out.println(rc + " não encontrado.");
-            return;
         }
     }
+    
     public void listarTodos(){
 
-        if (listaColaboradores.size() == 0) {
+        if (listaColaboradores.isEmpty()) {
             System.out.println("Ainda não há funcionários cadastrados");
-            return;
-        }
-        for (Pessoa p : listaColaboradores) {
-            System.out.println(p.toString());
+        }else {
+            for (Pessoa p : listaColaboradores) {
+                System.out.println(p.toString());
+            }
         }
     }
+
+
     public void exlcuirColaborador(List<String> lista, String nome) {
-    
-        if (lista.contains(nome)) {
-            
-            lista.remove(nome);
-            System.out.println("Funcionario '" + nome + "' removido com sucesso.");
-        } else {
-            System.out.println("'" + nome + "' não está presente na lista.");
+
+        boolean removido = false;
+        for (Pessoa pessoa : listaColaboradores) {
+            if (pessoa.getRc().equals(rc)) {
+                listaColaboradores.remove(rc);
+                System.out.println("Funcionário '" + rc + "' removido com sucesso.");
+                removido = true;
+                return;
+            }
         }
+        if (!removido) {
+            System.out.println("'" + rc + "' não está presente na lista.");
+        }
+
     }
+    
     public void excluirTudo(){
         listaColaboradores.removeAll(listaColaboradores);
     }
