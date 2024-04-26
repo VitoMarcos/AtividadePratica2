@@ -61,6 +61,6 @@ public class Cadastro {
 
     public void excluirTudo() {
         listaColaboradores.removeAll(listaColaboradores);
-        System.out.println("!!!Todos os funcionários foram excluídos!!!");
+        System.out.println("\n!!!Todos os funcionários foram excluídos!!!");
     }
 }

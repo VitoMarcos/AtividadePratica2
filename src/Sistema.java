@@ -193,11 +193,11 @@ public class Sistema {
                 Verificar4();
                 break;
             case 0:
-                System.out.println("O sistema foi finalizado!");
+                System.out.println("\nO sistema foi finalizado!");
                 break;
 
             default:
-                System.out.println("Opção inválida. Tente novamente...");
+                System.out.println("\nOpção inválida. Tente novamente...");
                 break;
         }
 
