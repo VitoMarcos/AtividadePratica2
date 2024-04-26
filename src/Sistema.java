@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Sistema {
     
     static Cadastro atleta = new Cadastro();
@@ -5,6 +7,11 @@ public class Sistema {
     static Cadastro comissao = new Cadastro();
     static Cadastro dm = new Cadastro();
     static Cadastro Geral = new Cadastro();
+
+    
+
+    
+
 private static void Verificar1(){
     int newop;
     String nome;
@@ -48,6 +55,7 @@ private static void Verificar1(){
 
                     Atleta a = new Atleta(nome, idade, rc, cargo, posicao, tempContrato, salario);
                     atleta.cadastrar(a);
+                    Geral.cadastrar(a);
 
                     System.out.println("Atleta cadastrado!");
                     break;
@@ -70,6 +78,7 @@ private static void Verificar1(){
 
                     FuncionariosGeral f = new FuncionariosGeral(nome, idade, rc, cargo, tempContrato, salario);
                     funcionario.cadastrar(f);
+                    Geral.cadastrar(f);
 
                     System.out.println("Funcionário cadastrado!");
                     break;
@@ -91,7 +100,7 @@ private static void Verificar1(){
 
                     ComissaoTecnica c = new ComissaoTecnica(nome, idade, rc, cargo, tempContrato, salario);
                     comissao.cadastrar(c);
-
+                    Geral.cadastrar(c);
                     System.out.println("Integrante de comissão técnica cadastrado!");
                     break;
                 case 4: 
@@ -112,7 +121,7 @@ private static void Verificar1(){
 
                     DepartamentoMedico d = new DepartamentoMedico(nome, idade, rc, cargo, tempContrato, salario);
                     dm.cadastrar(d);
-
+                    Geral.cadastrar(d);
                     System.out.println("Integrante de departamento médico cadastrado!");
                     break;
                 case 0:
@@ -123,6 +132,56 @@ private static void Verificar1(){
                     break;
                 }} while (newop != 0);  
             
+}
+
+private static void Verificar2(){
+
+    int onemoreop;
+    String rc;
+    System.out.println("BUSCANDO FUNCIONÁRIOS");
+            System.out.println("1) Buscar Atleta");
+            System.out.println("2) Buscar Funcionário");
+            System.out.println("3) Buscar Comissão técnica");
+            System.out.println("4) Buscar Departamento médico");
+            System.out.println("5) Buscar em todos");
+            System.out.println("0) Voltar ao menu principal");
+            System.out.print("Selecione aonde você quer fazer a sua busca: ");
+            onemoreop = Console.LerInt();
+
+            switch (onemoreop) {
+                case 1:
+                    System.out.print("Digite o Registro de clube(RC) do atleta: ");
+                    rc = Console.LerString();
+                    atleta.procurar(rc);
+                    break;
+                case 2:
+                System.out.print("Digite o Registro de clube(RC) do funcionário: ");
+                rc = Console.LerString();
+                funcionario.procurar(rc);
+                    break;
+                case 3:
+                System.out.print("Digite o Registro de clube(RC) do integrante da comissão técnica: ");
+                    rc = Console.LerString();
+                    comissao.procurar(rc);
+                    break;
+                case 4:
+                System.out.print("Digite o Registro de clube(RC) do integrante do departamento médico: ");
+                    rc = Console.LerString();
+                    dm.procurar(rc);
+                    break;
+                case 5:
+                System.out.print("Digite o Registro de clube(RC) da pessoa: ");
+                    rc = Console.LerString();
+                    Geral.procurar(rc);
+                    break;
+                case 0:
+                    System.out.println("Voltando ao menu principal");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente...");
+                    break;
+            }
+
 }
 private static void Menu(){
     System.out.println("---SISTEMA DE GERENCIAMENTO CLUBE---");
@@ -139,7 +198,7 @@ private static void Verificar(int op){
     String nome;
     int idade;
     String rc;
-    int tempContrato;
+    int tempContrato; 
     float salario;
     String posicao;
 
@@ -148,13 +207,7 @@ private static void Verificar(int op){
             Verificar1();
             break;
         case 2:
-            System.out.println("Buscando funcionarios...");
-            System.out.print("Informe o Registro de clube(RC) do funcionário: ");
-            rc = Console.LerString();
-
-            
-
-
+            Verificar2();
             break;
         case 3:
             

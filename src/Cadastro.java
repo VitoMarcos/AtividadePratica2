@@ -24,22 +24,28 @@ public class Cadastro {
     public  void cadastrar(ComissaoTecnica c){
         listaColaboradores.add(c);
     }
-
     public  List<Pessoa> getListaColaboradores() {
         return listaColaboradores;
     }
+    
 
     public void procurar(String rc){
 
+        boolean encontrado = false;
         for (Pessoa i : listaColaboradores) {
             if (i.getRc().equals(rc)) {
                 System.out.println("Funcionário encontrado!\n" + i.toString());
+                encontrado = true;
                 return;
             }
+
+        }
+
+        if (!encontrado) {
             System.out.println(rc + " não encontrado.");
-            return;
         }
     }
+    
     public void listarTodos(){
 
         if (listaColaboradores.size() == 0) {
@@ -50,14 +56,14 @@ public class Cadastro {
             System.out.println(p.toString());
         }
     }
-    public void exlcuirColaborador(List<String> lista, String nome) {
+    public void exlcuirColaborador(List<String> lista, String rc) {
     
-        if (lista.contains(nome)) {
+        if (lista.contains(rc)) {
             
-            lista.remove(nome);
-            System.out.println("Funcionario '" + nome + "' removido com sucesso.");
+            lista.remove(rc);
+            System.out.println(rc +  "removido com sucesso.");
         } else {
-            System.out.println("'" + nome + "' não está presente na lista.");
+            System.out.println(rc +  "não está presente na lista.");
         }
     }
     public void excluirTudo(){
