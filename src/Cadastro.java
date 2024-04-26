@@ -9,15 +9,27 @@ public class Cadastro {
         listaColaboradores = new ArrayList<>();
     }
 
-    public static void cadastrar(Pessoa p){
+    public  void cadastrar(Pessoa p){
         listaColaboradores.add(p);
     }
+    public  void cadastrar(Atleta a){
+        listaColaboradores.add(a);
+    }
+    public  void cadastrar(DepartamentoMedico d){
+        listaColaboradores.add(d);
+    }
+    public  void cadastrar(FuncionariosGeral f){
+        listaColaboradores.add(f);
+    }
+    public  void cadastrar(ComissaoTecnica c){
+        listaColaboradores.add(c);
+    }
 
-    public static List<Pessoa> getListaColaboradores() {
+    public  List<Pessoa> getListaColaboradores() {
         return listaColaboradores;
     }
 
-    public static void procurar(String nome){
+    public void procurar(String nome){
 
         for (Pessoa i : listaColaboradores) {
             if (i.getNome().equals(nome)) {
@@ -28,7 +40,7 @@ public class Cadastro {
             return;
         }
     }
-    public static void listarTodos(){
+    public void listarTodos(){
 
         if (listaColaboradores.size() == 0) {
             System.out.println("Ainda não há funcionários cadastrados");
@@ -38,7 +50,7 @@ public class Cadastro {
             System.out.println(p.toString());
         }
     }
-    public static void exlcuirColaborador(List<String> lista, String nome) {
+    public void exlcuirColaborador(List<String> lista, String nome) {
     
         if (lista.contains(nome)) {
             
@@ -48,7 +60,7 @@ public class Cadastro {
             System.out.println("'" + nome + "' não está presente na lista.");
         }
     }
-    public static void excluirTudo(){
+    public void excluirTudo(){
         listaColaboradores.removeAll(listaColaboradores);
     }
 }

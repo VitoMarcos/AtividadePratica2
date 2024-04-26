@@ -8,9 +8,9 @@ public class Atleta extends Pessoa{
  }
 
 
-    public Atleta(String nome, int idade, String cargo, String posicao, int tempContrato, float salario)
+    public Atleta(String nome, int idade, String rc, String posicao, int tempContrato, float salario)
     {
-        super(nome, idade, cargo);
+        super(nome, idade, rc);
         this.posicao = posicao;
         this.tempContrato = tempContrato;
         this.salario = salario;
@@ -50,7 +50,7 @@ public class Atleta extends Pessoa{
     @Override
     public String toString() {
         
-        return super.toString() + "\nPosição: " + posicao + "\nTempo de contrato(anos): " + "Salario: R$" + salario;
+        return super.toString() + "\nPosição: " + posicao + "\nTempo de contrato(meses): " + "Salario: R$" + salario;
     }
     
 }
