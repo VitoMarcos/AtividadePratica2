@@ -29,14 +29,14 @@ public class Cadastro {
         return listaColaboradores;
     }
 
-    public void procurar(String nome){
+    public void procurar(String rc){
 
         for (Pessoa i : listaColaboradores) {
-            if (i.getNome().equals(nome)) {
-                System.out.println("Colaborador encontrado!\n" + i.toString());
+            if (i.getRc().equals(rc)) {
+                System.out.println("Funcionário encontrado!\n" + i.toString());
                 return;
             }
-            System.out.println(nome + " não encontrado.");
+            System.out.println(rc + " não encontrado.");
             return;
         }
     }

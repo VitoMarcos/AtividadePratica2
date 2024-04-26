@@ -8,9 +8,9 @@ public class Atleta extends Pessoa{
  }
 
 
-    public Atleta(String nome, int idade, String rc, String posicao, int tempContrato, float salario)
+    public Atleta(String nome, int idade, String rc, String cargo, String posicao, int tempContrato, float salario)
     {
-        super(nome, idade, rc);
+        super(nome, idade, rc, cargo);
         this.posicao = posicao;
         this.tempContrato = tempContrato;
         this.salario = salario;

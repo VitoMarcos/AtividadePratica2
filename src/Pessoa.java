@@ -2,13 +2,15 @@ public class Pessoa {
     private String nome;
     private int idade;
     private String rc;
+    private String cargo;
     
 
     public Pessoa(){}
-    public Pessoa(String nome, int idade, String rc) {
+    public Pessoa(String nome, int idade, String rc, String cargo) {
         this.nome = nome;
         this.idade = idade;
         this.rc = rc;
+        this.cargo = cargo;
         
     }
     public String getNome() {
@@ -29,10 +31,16 @@ public class Pessoa {
     public void setRc(String rc) {
         this.rc = rc;
     }
-    
+    public String getCargo() {
+        return cargo;
+    }
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
     @Override
     public String toString() {
-        return "FUNCIONÁRIO\nNome: " + nome + "\nIdade: " + idade + "\nRegistro do clube: " + rc;
+        return "FUNCIONÁRIO\nNome: " + nome + "\nIdade: " + idade + "\nRegistro do clube: " + rc + "\nCargo: " + cargo;
     }
+    
     
 }

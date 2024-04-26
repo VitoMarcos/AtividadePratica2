@@ -2,16 +2,16 @@ public class ComissaoTecnica extends Pessoa {
 
     private int tempContrato;
     private float salario;
-    private String cargo;
+    
 
     public ComissaoTecnica() {}
 
-    public ComissaoTecnica(String nome, int idade, String rc, int tempContrato, float salario, String cargo) {
+    public ComissaoTecnica(String nome, int idade, String rc, String cargo, int tempContrato, float salario) {
 
-        super(nome, idade, rc);
+        super(nome, idade, rc, cargo);
         this.tempContrato = tempContrato;
         this.salario = salario;
-        this.cargo = cargo;
+        
 
     }
 
@@ -38,18 +38,12 @@ public class ComissaoTecnica extends Pessoa {
         this.salario = salario;
 
     }
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
+    
     @Override
     public String toString() {
 
         return super.toString() + "\nTempo de Contrato(meses): " + tempContrato +
-        "\nSalário: R$" + salario + "\nCargo: " + cargo;
+        "\nSalário: R$" + salario;
 
     }
 

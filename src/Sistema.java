@@ -1,6 +1,10 @@
 public class Sistema {
     
-
+    static Cadastro atleta = new Cadastro();
+    static Cadastro funcionario = new Cadastro();
+    static Cadastro comissao = new Cadastro();
+    static Cadastro dm = new Cadastro();
+    static Cadastro Geral = new Cadastro();
 private static void Verificar1(){
     int newop;
     String nome;
@@ -9,6 +13,9 @@ private static void Verificar1(){
     int tempContrato;
     float salario;
     String posicao;
+    String cargo;
+    
+    
           do {
             System.out.println("CADASTRANDO FUNCIONÁRIOS");
             System.out.println("1) Atleta");
@@ -22,7 +29,7 @@ private static void Verificar1(){
             switch (newop) {
                 case 1:
 
-                Cadastro atleta = new Cadastro();
+                
                     System.out.println("\nNovo atleta:");
                     System.out.print("Registrar nome: ");
                     nome = Console.LerString();
@@ -30,6 +37,8 @@ private static void Verificar1(){
                     idade = Console.LerInt();
                     System.out.print("Registro do clube (ex: 000.000-00): ");
                     rc = Console.LerString();
+                    System.out.print("Cargo: ");
+                    cargo = Console.LerString();
                     System.out.print("Tempo de contrato(meses): ");
                     tempContrato = Console.LerInt();
                     System.out.print("Salário: R$");
@@ -37,14 +46,14 @@ private static void Verificar1(){
                     System.out.print("Posição em que atua: ");
                     posicao = Console.LerString();
 
-                    Atleta a = new Atleta(nome, idade, rc, posicao, tempContrato, salario);
+                    Atleta a = new Atleta(nome, idade, rc, cargo, posicao, tempContrato, salario);
                     atleta.cadastrar(a);
 
                     System.out.println("Atleta cadastrado!");
                     break;
                 case 2:
 
-                Cadastro funcionario = new Cadastro();
+                
                     System.out.println("\nNovo funcionario:");
                     System.out.print("Registrar nome: ");
                     nome = Console.LerString();
@@ -57,15 +66,15 @@ private static void Verificar1(){
                     System.out.print("Salário: R$");
                     salario = Console.LerFloat();
                     System.out.print("Cargo que ocupa: ");
-                    String cargo = Console.LerString();
+                    cargo = Console.LerString();
 
-                    FuncionariosGeral f = new FuncionariosGeral(nome, idade, rc, tempContrato, salario, cargo);
+                    FuncionariosGeral f = new FuncionariosGeral(nome, idade, rc, cargo, tempContrato, salario);
                     funcionario.cadastrar(f);
 
                     System.out.println("Funcionário cadastrado!");
                     break;
                 case 3:
-                Cadastro comissao = new Cadastro();
+                
                     System.out.println("\nNovo integrante de comissão técnica:");
                     System.out.print("Registrar nome: ");
                     nome = Console.LerString();
@@ -80,13 +89,13 @@ private static void Verificar1(){
                     System.out.print("Cargo que ocupa: ");
                     cargo = Console.LerString();
 
-                    ComissaoTecnica c = new ComissaoTecnica(nome, idade, rc, tempContrato, salario, cargo);
+                    ComissaoTecnica c = new ComissaoTecnica(nome, idade, rc, cargo, tempContrato, salario);
                     comissao.cadastrar(c);
 
                     System.out.println("Integrante de comissão técnica cadastrado!");
                     break;
                 case 4: 
-                Cadastro dm = new Cadastro();
+                
                     System.out.println("\nNovo integrante de departamento médico:");
                     System.out.print("Registrar nome: ");
                     nome = Console.LerString();
@@ -101,7 +110,7 @@ private static void Verificar1(){
                     System.out.print("Cargo que ocupa: ");
                     cargo = Console.LerString();
 
-                    DepartamentoMedico d = new DepartamentoMedico(nome, idade, rc, tempContrato, salario, cargo);
+                    DepartamentoMedico d = new DepartamentoMedico(nome, idade, rc, cargo, tempContrato, salario);
                     dm.cadastrar(d);
 
                     System.out.println("Integrante de departamento médico cadastrado!");
@@ -117,10 +126,10 @@ private static void Verificar1(){
 }
 private static void Menu(){
     System.out.println("---SISTEMA DE GERENCIAMENTO CLUBE---");
-    System.out.println("1) Cadastro de funcionário");
-    System.out.println("2) Procurar funcionário");
-    System.out.println("3) Listar todos os funcionários");
-    System.out.println("4) Excluir funcionário");
+    System.out.println("1) Cadastro");
+    System.out.println("2) Busca");
+    System.out.println("3) Listar todos");
+    System.out.println("4) Excluir");
     System.out.println("0) Sair do sistema");
     System.out.print("");
 }
@@ -139,7 +148,13 @@ private static void Verificar(int op){
             Verificar1();
             break;
         case 2:
+            System.out.println("Buscando funcionarios...");
+            System.out.print("Informe o Registro de clube(RC) do funcionário: ");
+            rc = Console.LerString();
+
             
+
+
             break;
         case 3:
             
