@@ -7,6 +7,7 @@ public class Sistema {
     static Cadastro comissao = new Cadastro();
     static Cadastro dm = new Cadastro();
     static Cadastro Geral = new Cadastro();
+    
 
     
 
@@ -138,7 +139,9 @@ private static void Verificar2(){
 
     int onemoreop;
     String rc;
-    System.out.println("BUSCANDO FUNCIONÁRIOS");
+
+    do {
+        System.out.println("BUSCANDO FUNCIONÁRIOS");
             System.out.println("1) Buscar Atleta");
             System.out.println("2) Buscar Funcionário");
             System.out.println("3) Buscar Comissão técnica");
@@ -181,10 +184,45 @@ private static void Verificar2(){
                     System.out.println("Opção inválida. Tente novamente...");
                     break;
             }
+    } while (onemoreop != 0);
+    
 
 }
+private static void Verificar4(){
+    int oppenheimer;
+    String rc;
+    do {
+        
+        System.out.println("\nEXCLUSÃO DE FUNCIONÁRIO");
+        System.out.println("1) Excluir funcionário");
+        System.out.println("2) Excluir todos!!!");
+        System.out.println("0) Voltar ao menu principal");
+        System.out.print("");
+        oppenheimer = Console.LerInt();
+
+        switch (oppenheimer) {
+            case 1:
+                System.out.print("Digite o Registro de clube(RC) de quem deseja excluir do sistema");
+                rc = Console.LerString();
+                Geral.excluirColaborador(rc);
+                break;
+            case 2:
+            Geral.excluirTudo();
+                break;
+            case 0:
+                System.out.println("\nVoltando ao menu principal");
+                break;
+        
+            default:
+                System.out.println("Opção inválida. Tente novamente...");
+                break;
+        }
+
+
+    } while (oppenheimer != 0);
+}
 private static void Menu(){
-    System.out.println("---SISTEMA DE GERENCIAMENTO CLUBE---");
+    System.out.println("\n\n---SISTEMA DE GERENCIAMENTO CLUBE---");
     System.out.println("1) Cadastro");
     System.out.println("2) Busca");
     System.out.println("3) Listar todos");
@@ -210,10 +248,11 @@ private static void Verificar(int op){
             Verificar2();
             break;
         case 3:
-            
+            System.out.println("\nLISTAGEM DE TODOS OS FUNCIONARIOS DO CLUBE");
+            Geral.listarTodos();
             break;
         case 4:
-            
+            Verificar4();
             break;           
         case 0:
             System.out.println("O sistema foi finalizado!");
@@ -248,4 +287,3 @@ public static void executar(){
 }
 
 }
-

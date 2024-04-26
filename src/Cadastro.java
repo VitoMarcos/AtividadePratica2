@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cadastro {
-    
+
     private static List<Pessoa> listaColaboradores;
 
     public Cadastro(){
@@ -12,22 +12,12 @@ public class Cadastro {
     public  void cadastrar(Pessoa p){
         listaColaboradores.add(p);
     }
-    public  void cadastrar(Atleta a){
-        listaColaboradores.add(a);
-    }
-    public  void cadastrar(DepartamentoMedico d){
-        listaColaboradores.add(d);
-    }
-    public  void cadastrar(FuncionariosGeral f){
-        listaColaboradores.add(f);
-    }
-    public  void cadastrar(ComissaoTecnica c){
-        listaColaboradores.add(c);
-    }
+    
     public  List<Pessoa> getListaColaboradores() {
         return listaColaboradores;
     }
     
+
 
     public void procurar(String rc){
 
@@ -48,24 +38,29 @@ public class Cadastro {
     
     public void listarTodos(){
 
-        if (listaColaboradores.size() == 0) {
+        if (listaColaboradores.isEmpty()) {
             System.out.println("Ainda não há funcionários cadastrados");
-            return;
-        }
-        for (Pessoa p : listaColaboradores) {
-            System.out.println(p.toString());
+        }else {
+            for (Pessoa p : listaColaboradores) {
+                System.out.println(p.toString());
+            }
         }
     }
-    public void exlcuirColaborador(List<String> lista, String rc) {
-    
-        if (lista.contains(rc)) {
+
+    public void excluirColaborador(String rc) {
+       
+        for (int i = 0; i < listaColaboradores.size(); i++) {
+            Pessoa p = listaColaboradores.get(i);
             
-            lista.remove(rc);
-            System.out.println(rc +  "removido com sucesso.");
-        } else {
-            System.out.println(rc +  "não está presente na lista.");
+            if (p.getRc().equals(rc)) {
+                listaColaboradores.remove(i);
+                System.out.println(p.toString() + " foi removido com sucesso!");
+                return;
+            }
         }
+        System.out.println("'" + rc + "' não encontrado.");
     }
+    
     public void excluirTudo(){
         listaColaboradores.removeAll(listaColaboradores);
     }
